@@ -14,6 +14,8 @@ Add the following to the file
 
 Description=TFT35 -> Moonraker translation service by Wil-Sys
 
+WantedBy=multi-user.target
+
 After=multi-user.target
 
 [Service]
