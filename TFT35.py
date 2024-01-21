@@ -3,7 +3,7 @@ import requests
 import json 
 
 def read_data_into_var():
-  TEMP1 = pmd.read(128)
+  TEMP1 = RS232.read(128)
   print("TEMP1:" + str(TEMP1))
   SerialData = str(TEMP1)
   RS232.reset_output_buffer()
