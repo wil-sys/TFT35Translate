@@ -30,10 +30,11 @@ WantedBy=multi-user.target
 Press Control + X, then Y, and finally enter
 
 Move into the directoty using 
+
 cd TFT35Translate
 
-Give permissions and execute install script
-sudo chmod +x TFT35Install.sh
+Execute install script
+
 ./TFT35install.sh
 
 Reboot your system, then you're done!
