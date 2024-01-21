@@ -11,23 +11,32 @@ sudo nano /etc/systemd/system/TFT35Translate.service
 Add the following to the file
 
 [Unit]
+Description=TFT35Translate service by wil-sys
 
-Description=TFT35 -> Moonraker translation service by Wil-Sys
+After=network.target
 
-WantedBy=multi-user.target
-
-After=multi-user.target
 
 [Service]
 
 Type=simple
 
+ExecStart=/bin/bash /home/"$USER"/TFT35Translate/Start.sh
+
+ExecStop=/bin/bash /home/"$USER"/TFT35Translate/Stop.sh
+
 Restart=always
 
-ExecStart=/usr/bin/python3 /home/"$USER"/TFT35Translate/TFT35.py
+RestartSec=5
+
+TimeoutSec=60
+
+RuntimeMaxSec=infinity
+
+PIDFile=/tmp/name_script.pid
+
+[Install]
 
 WantedBy=multi-user.target
-
 
 Press Control + X, then Y, and finally enter
 
