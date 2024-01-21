@@ -1,10 +1,12 @@
 echo TFT35Translate install script by Wil-Sys https://github.com/wil-sys
 echo TFT35Translate installing python dependancies...
-sudo pip3 install pyserial
-pip install requests
+sudo apt install python3
+sudo python3 -m /home/"$USER"/TFT35Translate/venv
+sudo /home/"$USER"/TFT35Translate/venv/bin/pip install pyserial
+sudo /home/"$USER"/TFT35Translate/venv/bin/pip install requests
 sudo adduser "$USER" dialout
 echo TFT35Translate Adding python script as service...
-cat <<EOF >/etc/systemd/system/TFT35Translate.service
+sudo cat <<EOF >/etc/systemd/system/TFT35Translate.service
 [Unit]
 Description=TFT35 -> Moonraker translation service by Wil-Sys
 After=multi-user.target[Service]
