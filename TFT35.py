@@ -13,7 +13,7 @@ Success = 0
 SerialData = ""
 
 while True:
-    if RS232.inwaiting() > 1:
+    if RS232.inWaiting() > 1:
       read_data_into_var
       if (SerialData) == "M105":
         r = requests.get(MoonrakerURL + "/api/printer")
