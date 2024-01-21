@@ -5,17 +5,6 @@ A small python script to use the touchscreen mode of the BTT TFT35 E3 with Klipp
 Clone the repository using this command:
 Git Clone  https://github.com/wil-sys/TFT35Translate.git
 
-Add service file
-sudo nano /etc/systemd/system/TFT35Translate.service
-
-Add the everything contained in "service.txt" to it
-
-Press Control + X, then Y, and finally enter
-
-Move into the directoty using 
-
-cd TFT35Translate
-
 Execute give permissions and install script
 
 chmod +x TFT35Install.sh
