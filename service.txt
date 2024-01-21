@@ -1,0 +1,15 @@
+[Unit] Description=TFT35Translate service by wil-sys
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/"$USER"/TFT35Translate/Start.sh
+ExecStop=/bin/bash /home/"$USER"/TFT35Translate/Stop.sh
+Restart=always
+RestartSec=5
+TimeoutSec=60
+RuntimeMaxSec=infinity
+PIDFile=/tmp/name_script.pid
+
+[Install]
+WantedBy=multi-user.target
