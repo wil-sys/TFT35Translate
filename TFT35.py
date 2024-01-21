@@ -31,7 +31,7 @@ while True:
             RS232.Write("ok")
             Success = 1
     else:
-      Print(NO SERIAL DATA!)
+      Print("NO SERIAL DATA!")
 Success = 0
       
       
