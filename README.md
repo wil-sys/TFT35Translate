@@ -8,35 +8,7 @@ Git Clone  https://github.com/wil-sys/TFT35Translate.git
 Add service file
 sudo nano /etc/systemd/system/TFT35Translate.service
 
-Add the following to the file
-
-[Unit]
-Description=TFT35Translate service by wil-sys
-
-After=network.target
-
-
-[Service]
-
-Type=simple
-
-ExecStart=/bin/bash /home/"$USER"/TFT35Translate/Start.sh
-
-ExecStop=/bin/bash /home/"$USER"/TFT35Translate/Stop.sh
-
-Restart=always
-
-RestartSec=5
-
-TimeoutSec=60
-
-RuntimeMaxSec=infinity
-
-PIDFile=/tmp/name_script.pid
-
-[Install]
-
-WantedBy=multi-user.target
+Add the everything contained in "service.txt" to it
 
 Press Control + X, then Y, and finally enter
 
