@@ -14,7 +14,7 @@ Success = 0
 SerialData = ""
 
 while True:
-    if RS232.inWaiting() > 1:
+    if RS232.inWaiting() > 0:
       Success = 0
       read_data_into_var
       print(SerialData)
