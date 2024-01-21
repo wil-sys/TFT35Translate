@@ -15,6 +15,7 @@ SerialData = ""
 
 while True:
     if RS232.inWaiting() > 1:
+      Success = 0
       read_data_into_var
       print(SerialData)
       if (SerialData) == "M105":
@@ -31,7 +32,5 @@ while True:
             RS232.Write("ok")
             Success = 1
     else:
-      Print("NO SERIAL DATA!")
-Success = 0
-      
+      print("NO SERIAL DATA!")      
       
