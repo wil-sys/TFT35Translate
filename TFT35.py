@@ -2,7 +2,7 @@ import serial
 import requests
 import json 
 
-def read_data_into_var()
+def read_data_into_var():
   TEMP1 = pmd.read(128)
   SerialData = str(TEMP1)
   RS232.reset_output_buffer()
@@ -24,7 +24,7 @@ while True:
            r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
            r = requests.get(MoonrakerURL)
            if r.text == "ok":
-             RS232.Write("ok")
+            RS232.Write("ok")
             Success = 1
     Success = 0
       
