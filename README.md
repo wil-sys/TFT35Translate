@@ -16,7 +16,9 @@ Move into the directoty using
 
 cd TFT35Translate
 
-Execute install script
+Execute give permissions and install script
+
+chmod +x TFT35Install.sh
 
 ./TFT35install.sh
 
