@@ -10,11 +10,12 @@ print("TFT35Translate Serial Loopback test script by Wil-Sys")
 while True:
   if Increment < Retrys:
     print("Sending Test Message...")
-    RS232.write("TFT35Translate-LoopbackTest")
+    RS232.write(bytes("TFT35Translate-LoopbackTest", 'utf-8'))
     time.sleep(0.1)
     print("Receiving by 1024 bytes...")
     Recv = RS232.read(1024)
-    if Recv == "TFT35Translate-LoopbackTest":
+    RecvASCII = Recv.decode("utf-8")
+    if RecvASCII == "TFT35Translate-LoopbackTest":
       print("Loopback Succeeded! | Attempt number " + str(Increment) + "of " + str(Retrys))
       Successes += 1
       Increment += 1
