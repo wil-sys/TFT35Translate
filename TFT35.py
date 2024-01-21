@@ -8,7 +8,7 @@ def read_data_into_var():
   SerialData = str(TEMP1)
   RS232.reset_output_buffer()
 
-RS232= serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
+RS232= serial.Serial('/dev/ttyAMA0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 MoonrakerURL = "127.0.0.1"
 Success = 0
 SerialData = ""
