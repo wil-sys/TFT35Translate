@@ -24,6 +24,7 @@ while True:
            r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
            r = requests.get(MoonrakerURL)
            if r.text == "ok":
+             RS232.Write("ok")
             Success = 1
     Success = 0
       
