@@ -19,7 +19,7 @@ for KILLPID in 'ps ax | grep "TFT35" | awk "{print $1;}"'; do
 kill -9 $KILLPID;
 done
 EOF
-sudo a+x Stop.sh
+sudo chmod a+x Stop.sh
 echo TFT35Translate Starting service...
 sudo systemctl enable /etc/systemd/system/TFT35Translate.service
 sudo systemctl daemon-reload
