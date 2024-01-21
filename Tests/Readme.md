@@ -14,7 +14,7 @@ If either of these Tests fail:
 
 Execute "Sudo raspi-config" and under "Interface options" disable serial port shell messages, and enable serial port hardware
 
-If you are on a Raspberry Pi 3 model B, B+, 4, or Zero W the required PL011 UART controller is used for the bluetooth modem by default, for this program to work you must disable bluetooth
+If you are on a Raspberry Pi 3 model B, B+, 4, 5, Zero W or Zero 2 W the required PL011 UART controller is used for the bluetooth modem by default, for this program to work you must disable bluetooth
 
 To disable bluetooth:
 
