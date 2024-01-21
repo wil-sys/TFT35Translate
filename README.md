@@ -6,37 +6,25 @@ Clone the repository using this command:
 Git Clone  https://github.com/wil-sys/TFT35Translate.git
 
 Add service file
-
 sudo nano /etc/systemd/system/TFT35Translate.service
 
 Add the following to the file
 
 [Unit]
-
 Description=TFT35 -> Moonraker translation service by Wil-Sys
-
 After=multi-user.target
-
 [Service]
-
 Type=simple
-
 Restart=always
-
 ExecStart=/usr/bin/python3 /home/"$USER"/TFT35Translate/TFT35.py
-
 WantedBy=multi-user.target
-
 Press Control + X, then Y, and finally enter
 
 Move into the directoty using 
-
 cd TFT35Translate
 
 Give permissions and execute install script
-
 sudo chmod +x TFT35Install.sh
-
 ./TFT35install.sh
 
 Reboot your system, then you're done!
