@@ -7,5 +7,6 @@ UserInput = input("Connect your serial adapter's TX to GPIO 15, and the adapter'
 while True:
   if UserInput == "Y":
     RS232.write("TFT35Translate Serial Adapter test, if you can see this, type 'Y'")
-    if RS232.inWaiting() > 0:
+    BytesIn = RS232.inWaiting()
+    if BytesIn > 0:
       print("TFT35Translate Serial adapter test completed!")
