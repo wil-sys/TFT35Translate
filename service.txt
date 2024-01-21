@@ -10,6 +10,7 @@ Restart=always
 RestartSec=5
 TimeoutSec=60
 RuntimeMaxSec=infinity
+StartLimitIntervalSec=0
 PIDFile=/tmp/name_script.pid
 
 [Install]
