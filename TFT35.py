@@ -20,19 +20,19 @@ while True:
       read_data_into_var
       print(SerialData)
       if (SerialData) == "M105":
-        print("Received M105")
-        r = requests.get(MoonrakerURL + "/api/printer")
-        status = json.loads(r.json())
-        print(status)
-        RS232.write("ok T:" + str((status)["temperature"]["tool0"]["actual"]) + " / " + str((status)["temperature"]["tool0"]["target"]) + " B:" + str((status)["temperature"]["bed"]["actual"]) + " / " + str((status)["temperature"]["bed"]["target"]) + "@:0 B@:0")
+         print("Received M105")
+         r = requests.get(MoonrakerURL + "/api/printer")
+         status = json.loads(r.json())
+         print(status)
+         RS232.write("ok T:" + str((status)["temperature"]["tool0"]["actual"]) + " / " + str((status)["temperature"]["tool0"]["target"]) + " B:" + str((status)["temperature"]["bed"]["actual"]) + " / " + str((status)["temperature"]["bed"]["target"]) + "@:0 B@:0")
       else:
           while (Success) == 0:
-           r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
-           r = requests.get(MoonrakerURL)
-           if r.text == "ok":
-            print("ok")
-            RS232.write("ok")
-            Success = 1
+             r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
+             r = requests.get(MoonrakerURL)
+             if r.text == "ok":
+              print("ok")
+              RS232.write("ok")
+              Success = 1
     else:
         print("NO SERIAL DATA!")
 time.sleep(0.1)
