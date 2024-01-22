@@ -12,11 +12,10 @@ Startup= 0
 while Startup == 0:
     r = requests.get(config.MoonrakerURL + "/server/info")
     StartupStatus = r.json()
-    print(StartupStatus)
-    #StartupConnected = StartupStatus["klippy_connected"]
-    #if str(StartupConnected) == "True":
-        #Startup = 1
-        #PUT DEFAULT TFT35 INIT GCODES HERE
+    StartupConnected = StartupStatus["result"]["klippy_connected"]
+    if str(StartupConnected) == "True":
+        Startup = 1
+        PUT DEFAULT TFT35 INIT GCODES HERE
 
 while True:
     time.sleep(0.1)
