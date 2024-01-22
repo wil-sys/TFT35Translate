@@ -60,7 +60,7 @@ while True:
             config.EndstopOffsets["Y"],
             config.EndstopOffsets["Z"]
          )
-
+         RS232.write((M92 + "\n").encode('utf-8'))
 
       else:
           while Success == 0:
@@ -69,6 +69,6 @@ while True:
              r = requests.get(config.MoonrakerURL)
              if r.status_code == 200:
                print("ok")
-               TEMP2 = bytes("ok", 'utf-8')
+               TEMP2 = bytes("ok\n", 'utf-8')
                RS232.write(TEMP2)
                Success = 1
