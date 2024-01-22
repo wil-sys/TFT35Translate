@@ -33,7 +33,7 @@ while True:
       else:
           while Success == 0:
              print("Sending Data")
-             r = requests.post(MoonrakerURL + "/printer/gcode/script", params={"script": SerialData})
+             r = requests.post(MoonrakerURL + "/printer/gcode/script", data={"script": SerialData})
              r = requests.get(MoonrakerURL)
              if r.status_code == 200:
                print("ok")
