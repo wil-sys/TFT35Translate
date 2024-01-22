@@ -7,7 +7,7 @@ def read_data_into_var():
   TEMP1 = RS232.read(128)
   print("TEMP1:" + TEMP1.decode("uft-8"))
   SerialData = TEMP1.decode("utf-8")
-  RS232.reset_output_buffer()
+  RS232.reset_input_buffer()
 
 MoonrakerURL = "http://192.168.2.46"
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
@@ -27,6 +27,7 @@ while True:
          RS232.write("ok T:" + str((status)["temperature"]["tool0"]["actual"]) + " / " + str((status)["temperature"]["tool0"]["target"]) + " B:" + str((status)["temperature"]["bed"]["actual"]) + " / " + str((status)["temperature"]["bed"]["target"]) + "@:0 B@:0")
       else:
           while (Success) == 0:
+             print("Unsuccessful, Retrying...")
              r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
              r = requests.get(MoonrakerURL)
              if r.text == "ok":
