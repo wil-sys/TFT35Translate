@@ -50,6 +50,12 @@ while True:
             config.MaxAcceleration["Z"],
             config.MaxAcceleration["E"]
          )
+         M206 = "M206 X{:.2f} Y{:.2f} Z{:.2f}".format(
+            config.HomeOffsets["X"],
+            config.HomeOffsets["Y"],
+            config.HomeOffsets["Z"]
+         )
+
 
       else:
           while Success == 0:
