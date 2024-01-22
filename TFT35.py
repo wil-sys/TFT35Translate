@@ -11,7 +11,8 @@ def read_data_into_var():
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 Success = 0
 SerialData = ""
-MoonrakerURL = input("Please enter your host IP address")
+MoonrakerIP = input("Please enter your host IP address")
+MoonrakerURL = "http://" + str(MoonrakerIP)
 while True:
     BytesIn = RS232.inWaiting()
     if BytesIn > 0:
