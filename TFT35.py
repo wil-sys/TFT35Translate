@@ -38,7 +38,13 @@ while True:
             config.StepsPerMM["Z"],
             config.StepsPerMM["E"]
          )
-         
+         M203 = "M203 X{:.2f} Y{:.2f} Z{:.2f} E{:.2f}".format(
+            config.MaxFeedrate["X"],
+            config.MaxFeedrate["Y"],
+            config.MaxFeedrate["Z"]
+            config.MaxFeedrate["E"]
+         )
+
       else:
           while Success == 0:
              print("Sending Data")
