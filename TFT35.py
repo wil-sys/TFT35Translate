@@ -69,11 +69,11 @@ while True:
             config.EndstopOffsets["Y"],
             config.EndstopOffsets["Z"]
          )
-         Print(M92)
-         Print(M203)
-         Print(M201)
-         Print(M206)
-         Print(M666)
+         print(M92)
+         print(M203)
+         print(M201)
+         print(M206)
+         print(M666)
          RS232.write((M92 + "\n").encode('utf-8'))
          RS232.write((M203 + "\n").encode('utf-8'))
          RS232.write((M201 + "\n").encode('utf-8'))
