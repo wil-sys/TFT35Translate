@@ -17,7 +17,7 @@ while True:
     BytesIn = RS232.inWaiting()
     if BytesIn > 0:
       Success = 0
-      read_data_into_var
+      read_data_into_var()
       print(SerialData)
       if (SerialData) == "M105":
          print("Received M105")
@@ -28,12 +28,9 @@ while True:
       else:
           while Success == 0:
              print("Sending Data")
-             r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
+             r = requests.post(MoonrakerURL + "/printer/gcode/script", params={"script": SerialData})
              r = requests.get(MoonrakerURL)
-             HTTPReturn = json.loads(r.json())
-             HTTPResponse = HTTPReturn["Result"]
-             print(HTTPResponse)
-             if r.text == "ok":
+             if r.status_code == 200:
                print("ok")
                RS232.write("ok")
                Success = 1
