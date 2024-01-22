@@ -30,7 +30,8 @@ while True:
              r = requests.get(MoonrakerURL)
              if r.status_code == 200:
                print("ok")
-               RS232.write("ok")
+               TEMP2 = bytes("ok", 'utf-8')
+               RS232.write(TEMP2)
                Success = 1
     else:
         print("NO SERIAL DATA!")
