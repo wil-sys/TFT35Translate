@@ -14,6 +14,8 @@ Edit the "config.py" to be accurate to your printer using this command:
 
 sudo nano config.py
 
+When youre done, press Control X, Y, then enter to save and exit the document 
+
 Execute the install script
 
 ./TFT35Setup.sh
