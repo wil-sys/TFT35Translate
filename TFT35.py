@@ -2,8 +2,8 @@ import serial
 import requests
 import json
 import time
+import config
 
-MoonrakerURL = "http://192.168.2.46:7125"
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 Success = 0
 SerialData = ""
@@ -18,7 +18,7 @@ while True:
       print(SerialData)
       if SerialData == "M105":
          print("Received M105")
-         r = requests.get(MoonrakerURL + "/api/printer")
+         r = requests.get(config.MoonrakerURL + "/api/printer")
          status = r.json()
          print(status)
          response = "ok T:{:.2f}/{:.2f} B:{:.2f}/{:.2f} @:0 B@:0".format(
@@ -33,8 +33,8 @@ while True:
       else:
           while Success == 0:
              print("Sending Data")
-             r = requests.post(MoonrakerURL + "/printer/gcode/script", data={"script": SerialData})
-             r = requests.get(MoonrakerURL)
+             r = requests.post(config.MoonrakerURL + "/printer/gcode/script", data={"script": SerialData})
+             r = requests.get(config.MoonrakerURL)
              if r.status_code == 200:
                print("ok")
                TEMP2 = bytes("ok", 'utf-8')
