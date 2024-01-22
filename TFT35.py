@@ -28,6 +28,8 @@ while True:
                 status["temperature"]["bed"]["target"]
             )
          RS232.write(response.encode('utf-8'))
+         print(response)
+         print((response.encode('utf-8')))
       else:
           while Success == 0:
              print("Sending Data")
