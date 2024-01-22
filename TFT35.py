@@ -1,6 +1,7 @@
 import serial
 import requests
-import json 
+import json
+import socket
 
 def read_data_into_var():
   TEMP1 = RS232.read(128)
@@ -9,10 +10,10 @@ def read_data_into_var():
   RS232.reset_output_buffer()
 
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
-MoonrakerURL = "127.0.0.1"
 Success = 0
 SerialData = ""
-
+MoonrakerURL=socket.gethostbyname(hostname)
+print("MoonrakerURL is " + str(MoonrakerURL))
 while True:
     BytesIn = RS232.inWaiting()
     if BytesIn > 0:
@@ -33,5 +34,4 @@ while True:
             RS232.write("ok")
             Success = 1
     else:
-      print("NO SERIAL DATA!")      
-      
+      print("NO SERIAL DATA!")
