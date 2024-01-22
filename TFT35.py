@@ -4,8 +4,8 @@ import json
 import time
 
 def read_data_into_var():
-  TEMP1 = RS232.read(128)
-  print("TEMP1:" + TEMP1.decode("uft-8"))
+  TEMP1 = RS232.readline
+  print("TEMP1:" + TEMP1.decode("utf-8"))
   SerialData = TEMP1.decode("utf-8")
   RS232.reset_input_buffer()
 
