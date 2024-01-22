@@ -15,7 +15,7 @@ while Startup == 0:
     StartupConnected = StartupStatus["result"]["klippy_connected"]
     if str(StartupConnected) == "True":
         Startup = 1
-        PUT DEFAULT TFT35 INIT GCODES HERE
+        #PUT DEFAULT TFT35 INIT GCODES HERE
 
 while True:
     time.sleep(0.1)
