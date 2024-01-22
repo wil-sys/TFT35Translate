@@ -27,7 +27,7 @@ while True:
                 status["temperature"]["bed"]["actual"],
                 status["temperature"]["bed"]["target"]
             )
-         RS232.write(response.encode('utf-8'))
+         RS232.write((response + '\n').encode('utf-8'))
          print(response)
          print((response.encode('utf-8')))
       else:
