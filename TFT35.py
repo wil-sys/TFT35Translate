@@ -7,6 +7,15 @@ import config
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 Success = 0
 SerialData = ""
+Startup= 0
+
+while Startup == 0
+    r = requests.get(config.MoonrakerURL + "/server/info")
+    StartupStatus = r.json()
+    StartupConnected = StartupStatus["klippy_connected"]
+    if str(StartupConnected) == "True":
+        Startup == 1
+        #PUT DEFAULT TFT35 INIT GCODES HERE
 
 while True:
     time.sleep(0.1)
