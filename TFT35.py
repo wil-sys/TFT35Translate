@@ -79,7 +79,7 @@ while True:
          RS232.write((M201 + "\n").encode('utf-8'))
          RS232.write((M206 + "\n").encode('utf-8'))
          RS232.write((M666 + "\n").encode('utf-8'))
-         Print("Sent M503 Response")
+         print("Sent M503 Response")
       else:
           while Success == 0:
              print("Sending Data")
