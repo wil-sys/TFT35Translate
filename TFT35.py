@@ -30,10 +30,12 @@ while True:
              print("Unsuccessful, Retrying...")
              r = requests.post((MoonrakerURL), data= "/printer/gcode/script?script=" + (SerialData))
              r = requests.get(MoonrakerURL)
-             if r.text == "ok":
-              print("ok")
-              RS232.write("ok")
-              Success = 1
+             print(r.text)
+             Success = 1
+             #if r.text == "ok":
+              #print("ok")
+              #RS232.write("ok")
+              #Success = 1
     else:
         print("NO SERIAL DATA!")
 time.sleep(0.1)
