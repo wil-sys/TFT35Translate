@@ -33,6 +33,4 @@ while True:
                TEMP2 = bytes("ok", 'utf-8')
                RS232.write(TEMP2)
                Success = 1
-    else:
-        print("NO SERIAL DATA!")
 time.sleep(0.1)
