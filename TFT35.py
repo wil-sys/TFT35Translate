@@ -55,6 +55,11 @@ while True:
             config.HomeOffsets["Y"],
             config.HomeOffsets["Z"]
          )
+         M666 = "M666 X{:.2f} Y{:.2f} Z{:.2f}".format(
+            config.EndstopOffsets["X"],
+            config.EndstopOffsets["Y"],
+            config.EndstopOffsets["Z"]
+         )
 
 
       else:
