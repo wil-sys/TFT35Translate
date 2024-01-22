@@ -1,6 +1,7 @@
 import serial
 import requests
 import json
+import time
 
 def read_data_into_var():
   TEMP1 = RS232.read(128)
@@ -32,3 +33,6 @@ while True:
             print("ok")
             RS232.write("ok")
             Success = 1
+    else:
+        print("NO SERIAL DATA!")
+time.sleep(0.1)
