@@ -60,8 +60,17 @@ while True:
             config.EndstopOffsets["Y"],
             config.EndstopOffsets["Z"]
          )
+         Print(M92)
+         Print(M203)
+         Print(M201)
+         Print(M206)
+         Print(M666)
          RS232.write((M92 + "\n").encode('utf-8'))
-
+         RS232.write((M203 + "\n").encode('utf-8'))
+         RS232.write((M201 + "\n").encode('utf-8'))
+         RS232.write((M206 + "\n").encode('utf-8'))
+         RS232.write((M666 + "\n").encode('utf-8'))
+         Print("Sent M503 Response")
       else:
           while Success == 0:
              print("Sending Data")
