@@ -41,8 +41,14 @@ while True:
          M203 = "M203 X{:.2f} Y{:.2f} Z{:.2f} E{:.2f}".format(
             config.MaxFeedrate["X"],
             config.MaxFeedrate["Y"],
-            config.MaxFeedrate["Z"]
+            config.MaxFeedrate["Z"],
             config.MaxFeedrate["E"]
+         )
+         M201 = "M201 X{:.2f} Y{:.2f} Z{:.2f} E{:.2f}".format(
+            config.MaxAcceleration["X"],
+            config.MaxAcceleration["Y"],
+            config.MaxAcceleration["Z"],
+            config.MaxAcceleration["E"]
          )
 
       else:
