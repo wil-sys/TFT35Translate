@@ -3,14 +3,16 @@ import requests
 import json
 import time
 
-def read_data_into_var():
-  SerialData = RS232.readline
-  RS232.reset_input_buffer()
-
 MoonrakerURL = "http://192.168.2.46:7125"
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 Success = 0
 SerialData = ""
+
+def read_data_into_var():
+    SerialData = RS232.readline().decode("utf-8").strip()
+    RS232.reset_input_buffer()
+    return SerialData
+
 while True:
     BytesIn = RS232.inWaiting()
     if BytesIn > 0:
@@ -22,7 +24,13 @@ while True:
          r = requests.get(MoonrakerURL + "/api/printer")
          status = json.loads(r.json())
          print(status)
-         RS232.write("ok T:" + str((status)["temperature"]["tool0"]["actual"]) + " / " + str((status)["temperature"]["tool0"]["target"]) + " B:" + str((status)["temperature"]["bed"]["actual"]) + " / " + str((status)["temperature"]["bed"]["target"]) + "@:0 B@:0")
+         response = "ok T:{}/{} B:{}/{} @:0 B@:0".format(
+                status["temperature"]["tool0"]["actual"],
+                status["temperature"]["tool0"]["target"],
+                status["temperature"]["bed"]["actual"],
+                status["temperature"]["bed"]["target"]
+            )
+         RS232.write(response.encode('utf-8'))
       else:
           while Success == 0:
              print("Sending Data")
