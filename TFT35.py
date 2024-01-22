@@ -9,7 +9,7 @@ Success = 0
 SerialData = ""
 Startup= 0
 
-while Startup == 0
+while Startup == 0:
     r = requests.get(config.MoonrakerURL + "/server/info")
     StartupStatus = r.json()
     StartupConnected = StartupStatus["klippy_connected"]
