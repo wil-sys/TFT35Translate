@@ -21,7 +21,7 @@ while True:
          r = requests.get(MoonrakerURL + "/api/printer")
          status = r.json()
          print(status)
-         response = "ok T:{}/{} B:{}/{} @:0 B@:0".format(
+         response = "ok T:{:.2f}/{:.2f} B:{:.2f}/{:.2f} @:0 B@:0".format(
                 status["temperature"]["tool0"]["actual"],
                 status["temperature"]["tool0"]["target"],
                 status["temperature"]["bed"]["actual"],
