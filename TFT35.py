@@ -30,6 +30,15 @@ while True:
          RS232.write((response + '\n').encode('utf-8'))
          print(response)
          print((response.encode('utf-8')))
+      elif SerialData == "M503":
+         print("Received M503")
+         M92 = "M92 X{:.2f} Y{:.2f} Z{:.2f} E{:.2f}".format(
+            config.StepsPerMM["X"],
+            config.StepsPerMM["Y"],
+            config.StepsPerMM["Z"],
+            config.StepsPerMM["E"]
+         )
+         
       else:
           while Success == 0:
              print("Sending Data")
