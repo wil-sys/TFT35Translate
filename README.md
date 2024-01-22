@@ -7,7 +7,7 @@ Git Clone  https://github.com/wil-sys/TFT35Translate.git
 
 Move into the programs directory using this command:
 
-cd TFT35 Translate
+cd TFT35Translate
 
 Edit the "config.py" to be accurate to your printer using this command:
 
