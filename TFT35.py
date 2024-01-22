@@ -4,8 +4,8 @@ import json
 
 def read_data_into_var():
   TEMP1 = RS232.read(128)
-  print("TEMP1:" + str(TEMP1))
-  SerialData = str(TEMP1)
+  print("TEMP1:" + TEMP1.decode("uft-8"))
+  SerialData = TEMP1.decode("utf-8")
   RS232.reset_output_buffer()
 
 MoonrakerURL = "http://192.168.2.46"
