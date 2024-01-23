@@ -18,7 +18,7 @@ while Startup == 0:
     if str(StartupConnected) == "True":
         Startup = 1
         time.sleep(1)
-        TFTrst.ResetTFT
+        TFTrst.ResetTFT()
 
 while True:
     time.sleep(0.1)
