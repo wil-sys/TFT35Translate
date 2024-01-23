@@ -33,15 +33,15 @@ while True:
          r = requests.get(config.MoonrakerURL + "/api/printer")
          status = r.json()
          print(status)
-         response = "ok T:{:.2f}/{:.2f} B:{:.2f}/{:.2f} @:0 B@:0".format(
+         M105 = "ok T:{:.2f}/{:.2f} B:{:.2f}/{:.2f} @:0 B@:0".format(
                 status["temperature"]["tool0"]["actual"],
                 status["temperature"]["tool0"]["target"],
                 status["temperature"]["bed"]["actual"],
                 status["temperature"]["bed"]["target"]
             )
-         RS232.write((response + '\n').encode('utf-8'))
-         print(response)
-         print((response.encode('utf-8')))
+         RS232.write((M105 + '\n').encode('utf-8'))
+         print(M105)
+         print((M105.encode('utf-8')))
       elif SerialData == "M503":
          print("Received M503")
          M92 = "M92 X{:.2f} Y{:.2f} Z{:.2f} E{:.2f}".format(
