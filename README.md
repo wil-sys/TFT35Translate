@@ -20,8 +20,10 @@ sudo nano config.py
 
 When youre done, press Control X, Y, then enter to save and exit the document 
 
-Execute the install script
+Give permissions and Execute the install script
 
-./TFT35Setup.sh
+chmod +x TFT35Install.sh
+
+./TFT35Install.sh
 
 Reboot your system, then you're done!
