@@ -1,8 +1,6 @@
 from gpiozero import LED
 import time
 
-RSTpin = LED(18,active_high=False)
-
 def init():
     RSTpin = LED(18,active_high=False)
     RSTpin.off()
