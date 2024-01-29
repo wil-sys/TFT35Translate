@@ -1,4 +1,5 @@
 # TFT35Translate
+## WARNING: This repository is not fully functional and may be depricated in favor of a WebSocket version to directly translate Klipper's "RepRap-ish" gcode to the display
 A small python script to use the touchscreen mode of the BTT TFT35 E3 with Klipper via Raspberry Pi GPIO pins and Moonraker API Requests.
 ## Prerequisites 
 Run sudo raspi-config
